@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyPersonal.ManEditorPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Фамилия" />
+            <Entry Text="{Binding FirstName}" />
+                <Label Text="Имя" />
+            <Entry Text="{Binding LastName}" />
+                <Label Text="Отчество" />
+            <Entry Text="{Binding Patronimyc}" />
+            <Label Text="Подразделение" />
+            <Entry Text="{Binding Unit}" />
+                <Label Text="Дата рождения" />
+                <Entry Text="{Binding DateOfBirth}" />
+                <Label Text="Адрес" />
+                <Entry Text="{Binding Adress}" />
+            
+                <Grid HeightRequest="300">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="img" Grid.Column="1" Aspect="AspectFit"/>
+                </Grid>
+                
+                <Button x:Name="btn_photo" Text="Выбрать фото" Clicked="btn_photo_Clicked"></Button>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Сохранить" Clicked="SaveFriend" />
+                <Button Text="Изменить" Clicked="EditFriend" />
+                <Button Text="Удалить" Clicked="DeleteFriend" />
+                <Button Text="Отмена" Clicked="Cancel" />
+            </StackLayout>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

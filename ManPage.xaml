@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyPersonal.ManPage" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="5, 0, 5, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="270"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition />
+                    <RowDefinition Height="35"/>
+                    <RowDefinition />
+                    <RowDefinition Height="33"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.4*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="image" HeightRequest="270" Grid.ColumnSpan="2" Aspect="AspectFit"/>
+                <Button x:Name="btn_changephoto" IsVisible="False" Clicked="btn_changephoto_Clicked" Text="Изменить фото" WidthRequest="50" Grid.Column="1" VerticalOptions="End" HorizontalOptions="End"/>
+
+                <Label Text="Подразделение:" Grid.Row="1" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_unit" IsEnabled="False" Grid.Row="1" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Воинское звание:" Grid.Row="2" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_rank" IsEnabled="False" Grid.Row="2" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Фамилия:" Grid.Row="3" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_first_name" IsEnabled="False" Grid.Row="3" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Имя:" Grid.Row="4" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_last_name" IsEnabled="False" Grid.Row="4" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Отчество:" Grid.Row="5" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_patronymic" IsEnabled="False" Grid.Row="5" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Дата рождения:" Grid.Row="6" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_datebirth" IsEnabled="False" Grid.Row="6" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Телефон:" Grid.Row="7" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_phone" IsEnabled="False" Grid.Row="7" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Паспорт" Grid.Row="8" Style="{StaticResource labelStyle}"/>
+                <Label Text="Серия и номер:" Grid.Row="9" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_seriya" IsEnabled="False" Grid.Row="9" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+                <Label Text="Кем и когда выдан:" Grid.Row="10" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_kemkogda" IsEnabled="False" Grid.Row="10" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+                <Label Text="Идентификационный номер:" Grid.Row="11" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_identitynumber" IsEnabled="False" Grid.Row="11" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+                
+                <Label Text="Адрес" Grid.Row="12" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_adress" IsEnabled="False" Grid.Row="12" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Близкие родственники" Grid.Row="13" Style="{StaticResource labelStyle}"/>
+                <Label Text="Отец:" Grid.Row="14" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_father" IsEnabled="False" Grid.Row="14" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Мать:" Grid.Row="15" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_mother" IsEnabled="False" Grid.Row="15" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label Text="Братья и сестры:" Grid.Row="16" Style="{StaticResource labelStyle}"/>
+                <Editor x:Name="lbl_brothers" IsEnabled="False" Grid.Row="16" Grid.Column="1" Style="{StaticResource entryStyle}"/>
+
+                <Label x:Name="lbl_index"/>
+                <Grid Grid.Row="17" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <!--<ColumnDefinition/>-->
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn_edit_2" Text="Изменить" Clicked="Button_Clicked"/>
+                    <Button x:Name="btn_edit" Grid.Column="0" Text="Сохранить изменения" Clicked="EditFriend" IsEnabled="False"/>
+                    <Button Text="Удалить" Grid.Column="1" Clicked="DeleteFriend" />
+                    <!--<Button Text="Отмена" Grid.Column="2" Clicked="Cancel" />-->
+                </Grid>
+            </Grid>
+            <!--<StackLayout Margin="5, 0, 5, 0">
+            
+            
+            --><!--<Label x:Name="lbl_first_name" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />-->
+            <!--<Grid HeightRequest="300">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="image" Grid.Column="1" Aspect="AspectFit"/>
+            </Grid>-->
+            
+            
+            <!--<Label x:Name="lbl_datebirth"/>
+            <Label x:Name="lbl_adress"/>-->
+            
+            
+            <!--<StackLayout Orientation="Horizontal">
+                
+            </StackLayout>-->
+            <!--<StackLayout>
+                <Label Text="Фамилия" />
+                <Entry Text="{Binding FirstName}" />
+                <Label Text="Имя" />
+                <Entry Text="{Binding LastName}" />
+                <Label Text="Отчество" />
+                <Entry Text="{Binding Patronimyc}" />
+                <Label Text="Подразделение" />
+                <Entry Text="{Binding Unit}" />
+                <Label Text="Дата рождения" />
+                <Entry Text="{Binding DateOfBirth}" />
+                <Label Text="Адрес" />
+                <Entry Text="{Binding Adress}" />
+
+                <Grid HeightRequest="300">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="img" Grid.Column="1" Aspect="AspectFit"/>
+                </Grid>
+
+                
+                
+            </StackLayout>--><!--
+        </StackLayout>-->
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
